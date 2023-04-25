@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title><%= htmlWebpackPlugin.options.variables.title %></title>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.variables.description %>"/>
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.variables.keywords %>"/>
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="ASDEV Team">
+
+    <!-- Preconnect -->
+    <% htmlWebpackPlugin.options.variables.preconnect.forEach(function(link) { %>
+    <link rel="preconnect" href="<%= link %>"/>
+    <link rel="dns-prefetch" href="<%= link %>"/>
+    <% }); %>
+    <!-- End Preconnect -->
+
+    <!-- Open Graph meta tags-->
+    <% htmlWebpackPlugin.options.variables.og.forEach(function(og) { %>
+    <meta property="<%= og.property %>" content="<%= og.content %>">
+    <% }); %>
+    <!-- End Open Graph meta tags-->
+
+    <!-- Twitter meta tags-->
+    <% htmlWebpackPlugin.options.variables.twitter.forEach(function(twitter) { %>
+    <meta name="<%= twitter.name %>" content="<%= twitter.content %>">
+    <% }); %>
+    <!-- End Twitter meta tags-->
+
+    <link rel="alternate" type="text/html" title="<%= htmlWebpackPlugin.options.variables.title %>"
+          href="<%= htmlWebpackPlugin.options.variables.url %>"/>
+
+    <% if (htmlWebpackPlugin.options.variables.fav) { %>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<!--        <link rel="manifest" href="/site.webmanifest">-->
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#152354">
+        <meta name="msapplication-TileColor" content="#152354">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+    <% } %>
+
+    <!-- Script -->
+    <% htmlWebpackPlugin.options.variables.script.forEach(function(link) { %>
+    <script src="<%= link %>" defer></script>
+    <% }); %>
+    <!-- End Script -->
+
+    <% if (htmlWebpackPlugin.options.variables.gtm && htmlWebpackPlugin.options.variables.mode === 'production') { %>
+    <!-- Google Tag Manager-->
+    <script>
+        ( function( w, d, s, l, i ){
+            w[ l ] = w[ l ] || [];
+            w[ l ].push( {
+                'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+            } );
+            var f = d.getElementsByTagName( s )[ 0 ],
+                j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.defer = true;
+            j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore( j, f );
+        } )( window, document, 'script', 'dataLayer', '<%= htmlWebpackPlugin.options.variables.gtm %>' );
+    </script>
+    <!-- End Google Tag Manager-->
+    <% } %>
+
+    <% if (htmlWebpackPlugin.options.variables.ym && htmlWebpackPlugin.options.variables.mode === 'production') { %>
+    <!-- Yandex.Metrika counter -->
+    <script>
+        ( function( m, e, t, r, i, k, a ){
+            m[ i ] = m[ i ] || function(){
+                ( m[ i ].a = m[ i ].a || [] ).push( arguments )
+            };
+            m[ i ].l = 1 * new Date();
+            k = e.createElement( t ), a = e.getElementsByTagName( t )[ 0 ], k.defer = 1, k.src = r, a.parentNode.insertBefore( k, a )
+        } )
+        ( window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym" );
+
+        ym( <%= htmlWebpackPlugin.options.variables.ym %>, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+            });
+        </script>
+    <!-- /Yandex.Metrika counter -->
+    <% } %>
+
+</head>
+
+<body>
+<div id="root"></div>
+
+<% if (htmlWebpackPlugin.options.variables.gtm && htmlWebpackPlugin.options.variables.mode === 'production') { %>
+<!-- Google Tag Manager (noscript)-->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=<%= htmlWebpackPlugin.options.variables.gtm %>" height="0"
+            width="0"
+            style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript)-->
+<% } %>
+
+<% if (htmlWebpackPlugin.options.variables.ym && htmlWebpackPlugin.options.variables.mode === 'production') { %>
+<!-- Yandex.Metrika counter -->
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/<%= htmlWebpackPlugin.options.variables.ym %>"
+              style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+<% } %>
+</body>
+</html>

@@ -1,0 +1,28 @@
+:root{
+    --transition                           : 0.3s ease;
+    
+    /* general color */
+    --font-color-primary                   : #001a34;
+    --font-color-secondary                 : #f5f5f5;
+    --background-color-primary             : #f5f5f5;
+    --background-color-secondary           : #f5f5f5;
+    --color-red                            : #ff273b;
+    --color-blue                           : #152354;
+    --color-white                          : #f3f3f3;
+    
+    /* button disabled color */
+    --font-btn-color-disabled              : #96a3ae;
+    --background-btn-color-disabled        : rgba(0, 48, 120, .04);
+    
+    /* button primary color */
+    --font-btn-color-primary               : #ffffff;
+    --font-btn-color-primary-hover         : #ffffff;
+    --background-btn-color-primary         : #6366f1;
+    --background-btn-color-primary-hover   : #5a5ddb;
+    
+    /* button secondary color */
+    --font-btn-color-secondary             : #005bff;
+    --font-btn-color-secondary-hover       : #0050e0;
+    --background-btn-color-secondary       : rgba(0, 150, 255, .08);
+    --background-btn-color-secondary-hover : rgba(0, 150, 255, .12);
+}

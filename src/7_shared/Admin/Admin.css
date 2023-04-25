@@ -1,0 +1,269 @@
+.admin{
+    /*min-height : calc(var(--vh, 1vh) * 100);*/
+}
+
+.adminContent{
+    display     : flex;
+    align-items : flex-start;
+}
+
+.adminContainer{
+    padding       : 15px 30px;
+    max-width     : calc(100% - 210px - 15px);
+    width         : 100%;
+    /*margin-left   : 15px;*/
+    background    : #fefefe;
+    box-shadow    : 0 4px 24px rgb(149 160 167 / 20%);
+    border-radius : 25px 0 0 25px;
+    transition    : all var(--transition);
+    margin-left   : auto;
+    min-height    : calc(var(--vh, 1vh) * 100);
+}
+
+.adminMenuWrapper{
+    max-width      : 210px;
+    min-width      : 210px;
+    width          : 210px;
+    /*padding       : 40px 0;*/
+    background     : #fefefe;
+    box-shadow     : 0 4px 24px rgb(149 160 167 / 20%);
+    border-radius  : 0 25px 25px 0;
+    transition     : all var(--transition);
+    position       : fixed;
+    top            : 0;
+    /*height        : fit-content;*/
+    height         : 100%;
+    display        : flex;
+    flex-direction : column;
+}
+
+.adminMenuTitle{
+    margin      : 0;
+    padding     : 15px 20px;
+    display     : flex;
+    align-items : center;
+}
+
+.adminMenuTitleIcon{
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+.adminMenuTitleText{
+    font-weight : bold;
+    margin-left : 10px;
+}
+
+.adminMenuItems{
+    list-style : none;
+    padding    : 0;
+    margin     : 0;
+}
+
+.adminMenuItems:last-child{
+    margin-top : auto;
+}
+
+.adminMenuItems, .adminMenuItems *{
+    user-select : none;
+}
+
+.adminMenuItem{
+    /*margin-bottom : 25px;*/
+}
+
+.adminMenuItemLink{
+    display          : flex;
+    align-items      : center;
+    text-decoration  : none;
+    padding          : 15px 20px;
+    transition       : background-color var(--transition);
+    background-color : transparent;
+}
+
+.adminMenuItemIcon{
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+.adminMenuItemTitle{
+    margin-left : 10px;
+    font-weight : 500;
+    font-size   : 16px;
+    color       : var(--color-blue);
+    transition  : color var(--transition)
+}
+
+.adminMenuItemIcon svg path{
+    transition : fill var(--transition);
+    fill       : var(--color-blue);
+}
+
+.adminMenuItemLink:hover,
+.adminMenuItemLinkActive{
+    background-color : #6366f1;
+}
+
+.adminMenuItemLink:hover .adminMenuItemTitle,
+.adminMenuItemLinkActive .adminMenuItemTitle{
+    color : var(--color-white);
+}
+
+.adminMenuItemLink:hover .adminMenuItemIcon svg path,
+.adminMenuItemLinkActive .adminMenuItemIcon svg path{
+    fill : var(--color-white);
+}
+
+.adminMenuItem:first-child .adminMenuItemLink{
+    border-radius : 0 25px 0 0;
+}
+
+.adminMenuItem:last-child .adminMenuItemLink{
+    border-radius : 0 0 25px 0;
+}
+
+.adminBreadcrumbs{
+    list-style    : none;
+    display       : flex;
+    align-items   : center;
+    flex-wrap     : wrap;
+    margin        : 0 0 20px;
+    padding       : 15px 0 20px;
+    border-bottom : 1px solid;
+}
+
+.adminBreadcrumbs *{
+    font-weight : 400;
+    font-size   : 16px;
+    color       : #95a0a7;
+}
+
+.adminBreadcrumbsSeparator{
+    margin : 0 8px;
+}
+
+.adminBreadcrumbsLink{
+    text-decoration : none;
+    color           : #6366f1;
+    transition      : color var(--transition);
+}
+
+.adminBreadcrumbsLink:hover{
+    color : var(--color-blue);
+}
+
+.adminEntitiesWrapper{
+    
+}
+
+.adminEntitiesTitle{
+    font-weight : 500;
+    margin      : 0 0 15px;
+}
+
+.adminEntitiesAction{
+    margin-bottom   : 15px;
+    display         : flex;
+    justify-content : right;
+    align-items     : center;
+}
+
+.adminEntitiesActionItem{
+    margin : 0 10px;
+}
+
+.adminLoginWrapper{
+    width           : 100%;
+    height          : calc(var(--vh, 1vh) * 100);
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    flex-direction  : column;
+}
+
+.adminLoginForm{
+    max-width     : 436px;
+    width         : 100%;
+    padding       : 35px;
+    background    : rgba(255, 255, 255, .75);
+    box-shadow    : 0 4px 24px rgb(149 160 167 / 20%);
+    border-radius : 25px;
+    position      : relative;
+}
+
+.adminLoginError{
+    color       : var(--color-red);
+    font-weight : 500;
+    margin-top  : 15px;
+}
+
+.adminInfoData{
+    text-align     : center;
+    padding-bottom : 10px;
+    border-bottom  : 1px solid;
+    font-size      : 14px;
+}
+
+@media (max-width : 800px){
+    .adminMenuWrapper{
+        max-width : 64px;
+        min-width : 64px;
+        width     : 64px;
+    }
+    
+    .adminMenuItem:first-child .adminMenuItemLink,
+    .adminMenuItem:last-child .adminMenuItemLink{
+        border-radius : 0;
+    }
+    
+    .adminContainer{
+        max-width : calc(100% - 64px - 15px);
+    }
+    
+    .adminMenuTitleText,
+    .adminMenuItemTitle,
+    .adminInfoData{
+        display : none;
+    }
+}
+
+@media (max-width : 440px){
+    .adminMenuWrapper{
+        max-width : 44px;
+        min-width : 44px;
+        width     : 44px;
+    }
+    
+    .adminContainer{
+        max-width : calc(100% - 29px - 15px);
+    }
+    
+    .adminMenuItemLink,
+    .adminMenuTitle{
+        padding : 15px 10px;
+    }
+    
+    .adminMenuItems:last-child{
+        margin-bottom : 5px;
+    }
+    
+    /*.adminMenuWrapper{*/
+    /*    max-width : 210px;*/
+    /*    min-width : 210px;*/
+    /*    width     : 210px;*/
+    /*    z-index   : 3;*/
+    /*    transform : translateX(-100%);*/
+    /*}*/
+    /*.adminMenuTitleText,*/
+    /*.adminMenuItemTitle,*/
+    /*.adminInfoData{*/
+    /*    display : block;*/
+    /*}*/
+    /*.adminContainer{*/
+    /*    margin-top : 64px;*/
+    /*    max-width  : 100%;*/
+    /*    min-height : calc(var(--vh, 1vh) * 100 - 64px);*/
+    /*}*/
+}

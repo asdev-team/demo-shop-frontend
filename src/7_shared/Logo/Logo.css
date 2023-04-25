@@ -1,0 +1,13 @@
+.logoWrapper{
+
+}
+
+.logoTitle{
+    font-weight : bold;
+    font-size   : 32px;
+    line-height : 35px;
+}
+
+.logoDesc{
+    color : #837c7c;
+}

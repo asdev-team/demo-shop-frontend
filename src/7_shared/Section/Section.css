@@ -1,0 +1,22 @@
+.section{
+    padding : 40px 0;
+}
+
+.sectionTitle{
+    margin         : 0 0 42px;
+    font-size      : 32px;
+    font-weight    : bold;
+    text-transform : uppercase;
+    text-align     : center;
+}
+
+@media (max-width : 768px){
+    .section{
+        padding : 20px 0;
+    }
+    
+    .sectionTitle{
+        margin    : 0 0 32px;
+        font-size : 25px;
+    }
+}

@@ -1,0 +1,216 @@
+/* cartHeader */
+.cartHeaderButton{
+    background : transparent;
+    width      : 40px;
+    height     : 40px;
+    position   : relative;
+}
+
+.cartHeaderQuantity{
+    position        : absolute;
+    right           : 0;
+    top             : 3px;
+    border-radius   : 100%;
+    background      : #9e1000;
+    color           : #ffffff;
+    font-size       : 9px;
+    font-weight     : bold;
+    width           : 18px;
+    height          : 18px;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+/* cartSidebar */
+.cartSidebar{
+    position         : fixed;
+    width            : 100%;
+    height           : 100%;
+    background-color : rgba(0, 0, 0, 0.8);
+    top              : 0;
+    left             : 0;
+    opacity          : 0;
+    visibility       : hidden;
+    transition       : all var(--transition);
+    z-index          : 111;
+}
+
+.cartSidebar[data-open='true']{
+    opacity    : 1;
+    visibility : visible;
+}
+
+.cartSidebarBody{
+    min-height      : 100%;
+    display         : flex;
+    justify-content : flex-end;
+}
+
+.cartSidebarContent{
+    width              : 100%;
+    max-width          : 390px;
+    /*max-height: calc(100vh - 60px);*/
+    max-height         : 100vh;
+    padding            : 30px;
+    flex-direction     : column;
+    overflow           : auto;
+    -ms-overflow-style : none;
+    display            : flex;
+    transform          : translateX(0%);
+    background-color   : #ffffff;
+    box-shadow         : -1px 0 15px 0 rgb(0 0 0 / 20%);
+    transition         : transform var(--transition);
+}
+
+.cartSidebarHeading{
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+}
+
+.cartSidebarTitle{
+    font-size   : 24px;
+    font-weight : 700;
+}
+
+.cartSidebarButtonClose{
+    border          : none;
+    padding         : 0;
+    background      : transparent;
+    cursor          : pointer;
+    font-size       : 0;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+.cartSidebarButtonClose svg{
+    width  : 40px;
+    height : 40px;
+}
+
+.cartSidebarEmpty{
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    justify-content : center;
+    flex            : 1 1;
+    max-width       : 270px;
+    width           : 100%;
+    margin          : 0 auto;
+}
+
+.cartSidebarEmptyImg{
+    margin-bottom : 21px;
+    display       : block;
+}
+
+.cartSidebarEmptyTitle{
+    font-size     : 22px;
+    font-weight   : 600;
+    margin-bottom : 10px;
+}
+
+/* cartProduct */
+.cartProductItem{
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    border-radius   : 10px;
+    border          : 2px solid #f3f3f3;
+    padding         : 20px;
+}
+
+.cartProductItem:not(:last-child){
+    margin-bottom : 20px;
+}
+
+.cartProductInfo{
+    display        : flex;
+    flex-direction : column;
+    margin-left    : 20px;
+    margin-right   : 12px;
+}
+
+.cartProductsList{
+    margin   : 30px 0 0;
+    flex     : 1 1;
+    overflow : auto;
+    padding  : 0 5px 0 0;
+}
+
+.cartProductImg{
+    max-width : 70px;
+    width     : 100%;
+    height    : auto;
+    display   : flex;
+}
+
+.cartProductImg svg{
+    width  : inherit;
+    height : auto;
+}
+
+.cartProductTitle{
+    font-size     : 14px;
+    font-weight   : 400;
+    margin-bottom : 8px;
+    margin-top    : 0;
+}
+
+.cartProductPrice{
+    font-weight : 700;
+}
+
+.cartProductRemove{
+    margin-left      : auto;
+    border           : none;
+    outline          : none;
+    cursor           : pointer;
+    background-color : transparent;
+    /*filter           : grayscale(100%);*/
+    /*transition       : filter 0.3s ease;*/
+}
+
+/* cartTotal */
+.cartTotal{
+    margin-top : 15px;
+}
+
+.cartTotalPrice{
+    display         : flex;
+    justify-content : space-between;
+    margin-bottom   : 20px;
+}
+
+.cartTotalPriceLine{
+    border-bottom : 2px dashed #dfdfdf;
+    flex          : 1 1;
+    position      : relative;
+    top           : -3px;
+    margin        : 0 7px;
+}
+
+.cartTotalPriceNumber{
+    font-weight : 600;
+}
+
+.cartTotalButton{
+    width : 100%;
+}
+
+.cartHeaderButton svg,
+.cartSidebarButtonClose svg{
+    transition : transform var(--transition);
+}
+
+.cartHeaderButton:hover svg,
+.cartSidebarButtonClose:hover svg{
+    transform : scale(1.1);
+}
+
+.cartHeaderButton:active svg,
+.cartSidebarButtonClose:active svg{
+    transform : scale(0.9);
+}

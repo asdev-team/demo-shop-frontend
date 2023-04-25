@@ -1,0 +1,11 @@
+.containerInner{
+    padding       : 30px 45px;
+    background    : #ffffff;
+    border-radius : 20px;
+}
+
+@media (max-width : 1200px){
+    .containerInner{
+        padding : 30px 15px;
+    }
+}
